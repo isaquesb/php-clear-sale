@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         beStrictAboutTestSize="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         bootstrap="./tests/bootstrap.php"
+         verbose="true"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="true">
+    <testsuites>
+        <testsuite name="All Unit Tests">
+            <directory><![CDATA[./tests/]]></directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="coverage-html"
+             target="./tests/coverage/report"
+             charset="UTF-8"
+             yui="true"
+             highlight="true"
+             lowUpperBound="30"
+             highLowerBound="70" />
+        <log type="testdox-html" target="./tests/coverage/index.html" />
+        <log type="coverage-clover" target="./tests/coverage/clover/clover.xml"/>
+    </logging>
+    <filter>
+        <whitelist>
+            <directory suffix=".php"><![CDATA[src/]]></directory>
+            <exclude>
+                <directory suffix=".php"><![CDATA[vendor/]]></directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <help><![CDATA[
+    the following risky flags are enabled:
+    - beStrictAboutTestSize
+    - beStrictAboutTestsThatDoNotTestAnything
+
+    'beStringAboutTest' ensures that a test will timeout based on its expected
+    size. To change the expected size, just use one of the below annotations
+    on your test documentation:
+
+    @small  => 1 sec (default)
+    @medium => 10 sec
+    @large  => 60 sec
+
+    'beStrictAboutTestsThatDoNotTestAnything' will raise a risky flag if your case
+    fails to make any assertion tests (eg. assertEquals, @expectedException annotation,
+    mock expectations). Tests which makes no assertions create a false sense of
+    security, which this flags raises attention to.
+
+    for more information on the strict conditions imposed by risky flags, check
+    the documentation at
+
+    https://phpunit.de/manual/current/en/risky-tests.html
+]]></help>
+</phpunit>

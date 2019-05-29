@@ -1,0 +1,24 @@
+{
+  "name": "isaquesb/clear-sale-php-sdk",
+  "description": "Clear Sale API Client",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Isaque de Souza",
+      "role": "developer",
+      "email": "isaquesb@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "isaquesb/simple-http": "1.0",
+    "isaquesb/simple-hydrate": "0.1"
+  },
+  "autoload" : {
+    "psr-4": {
+      "ClearSale\\": "src"
+    }
+  },
+  "minimum-stability" : "dev",
+  "prefer-stable" : true
+}

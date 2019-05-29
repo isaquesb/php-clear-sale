@@ -1,0 +1,13 @@
+composer.lock
+
+# folders
+bin/
+vendor/
+tests/coverage/
+
+# IDE specific artifacts
+.buildpath
+.project
+.idea
+.settings/
+nbproject/
