@@ -3,6 +3,14 @@ namespace ClearSale;
 
 class Order extends Entity
 {
+    const PRODUCT_OTHER = -1;
+    const PRODUCT_APPLICATION = 1;
+    const PRODUCT_TOTAL = 3;
+    const PRODUCT_TOTAL_GUARANTEED = 4;
+    const PRODUCT_SCORE = 9;
+    const PRODUCT_REAL_TIME_DECISION = 10;
+    const PRODUCT_TICKETS = 11;
+
     /**
      * @var string
      */
@@ -193,7 +201,7 @@ class Order extends Entity
     /**
      * @return bool
      */
-    public function isGift()
+    public function getIsGift()
     {
         return $this->asBool($this->isGift);
     }
@@ -305,7 +313,7 @@ class Order extends Entity
     /**
      * @param OrderList $list
      */
-    public function setList(OrderList $list)
+    public function setList(OrderList $list = null)
     {
         $this->list = $list;
     }
@@ -313,7 +321,7 @@ class Order extends Entity
     /**
      * @param PurchaseInformation $purchaseInformation
      */
-    public function setPurchaseInformation(PurchaseInformation $purchaseInformation)
+    public function setPurchaseInformation(PurchaseInformation $purchaseInformation = null)
     {
         $this->purchaseInformation = $purchaseInformation;
     }
@@ -321,7 +329,7 @@ class Order extends Entity
     /**
      * @param SocialNetwork $socialNetwork
      */
-    public function setSocialNetwork(SocialNetwork $socialNetwork)
+    public function setSocialNetwork(SocialNetwork $socialNetwork = null)
     {
         $this->socialNetwork = $socialNetwork;
     }
@@ -329,7 +337,7 @@ class Order extends Entity
     /**
      * @param Billing $billing
      */
-    public function setBilling(Billing $billing)
+    public function setBilling(Billing $billing = null)
     {
         $this->billing = $billing;
     }
@@ -337,7 +345,7 @@ class Order extends Entity
     /**
      * @param Shipping $shipping
      */
-    public function setShipping(Shipping $shipping)
+    public function setShipping(Shipping $shipping = null)
     {
         $this->shipping = $shipping;
     }
@@ -345,7 +353,7 @@ class Order extends Entity
     /**
      * @param Payment[] $payments
      */
-    public function setPayments(array $payments)
+    public function setPayments(array $payments = [])
     {
         foreach ($payments as $payment) {
             if (!($payment instanceof Payment)) {
@@ -358,7 +366,7 @@ class Order extends Entity
     /**
      * @param Item[] $items
      */
-    public function setItems(array $items)
+    public function setItems(array $items = [])
     {
         foreach ($items as $item) {
             if (!($item instanceof Item)) {
@@ -371,7 +379,7 @@ class Order extends Entity
     /**
      * @param Passenger[] $passengers
      */
-    public function setPassengers(array $passengers)
+    public function setPassengers(array $passengers = [])
     {
         foreach ($passengers as $passenger) {
             if (!($passenger instanceof Passenger)) {
@@ -384,7 +392,7 @@ class Order extends Entity
     /**
      * @param Connection[] $connections
      */
-    public function setConnections(array $connections)
+    public function setConnections(array $connections = [])
     {
         foreach ($connections as $connection) {
             if (!($connection instanceof Connection)) {
@@ -397,7 +405,7 @@ class Order extends Entity
     /**
      * @param Hotel[] $hotels
      */
-    public function setHotels(array $hotels)
+    public function setHotels(array $hotels = [])
     {
         foreach ($hotels as $hotel) {
             if (!($hotel instanceof Hotel)) {

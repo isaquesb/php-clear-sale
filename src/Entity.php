@@ -5,8 +5,19 @@ use Simple\Hydrate;
 
 abstract class Entity
 {
-    use Hydrate\HydrateTrait, Hydrate\HydrateProtectedTrait, Hydrate\HydrateConstructorTrait {
+    use Hydrate\HydrateTrait, Hydrate\HydrateProtectedTrait {
         Hydrate\HydrateProtectedTrait::hydrate insteadof Hydrate\HydrateTrait;
+    }
+
+    /**
+     * Constructor
+     * @param array|string $data
+     */
+    public function __construct($data = [])
+    {
+        if (is_array($data)) {
+            $this->hydrate($data);
+        }
     }
 
     /**
@@ -50,7 +61,8 @@ abstract class Entity
             return null;
         }
         if (is_string($val)) {
-            return \DateTime::createFromFormat('Y-m-d H:i:s', $val);
+            $asDate = strlen($val) == 10;
+            return \DateTime::createFromFormat('Y-m-d H:i:s', $asDate ? $val . ' 00:00:00' : $val);
         }
         return $val;
     }

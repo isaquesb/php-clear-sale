@@ -1,6 +1,8 @@
 <?php
 namespace ClearSale\Auth;
 
+use ClearSale\Service\AuthService;
+
 class Login implements Auth
 {
     /**
@@ -24,8 +26,13 @@ class Login implements Auth
         $this->password = $password;
     }
 
-    public function getToken()
+    /**
+     * @param AuthService $service
+     * @return string
+     */
+    public function getToken(AuthService $service)
     {
-
+        $token = $service->getToken($this->login, $this->password);
+        return $token->getToken($service);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 namespace ClearSale\Auth;
 
+use ClearSale\Service\AuthService;
+
 class Token implements Auth
 {
     /**
@@ -20,11 +22,15 @@ class Token implements Auth
      */
     public function __construct($token, \DateTime $expirationDate)
     {
-        $this>$token = $token;
+        $this->token = $token;
         $this->expirationDate = $expirationDate;
     }
 
-    public function getToken()
+    /**
+     * @param AuthService $service
+     * @return string
+     */
+    public function getToken(AuthService $service)
     {
         return $this->token;
     }
