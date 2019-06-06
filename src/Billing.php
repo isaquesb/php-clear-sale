@@ -3,9 +3,6 @@ namespace ClearSale;
 
 class Billing extends Entity
 {
-    const GENDER_MALE = 'M';
-    const GENDER_FEMALE = 'F';
-
     const PERSON_NATURAL = 1;
     const PERSON_LEGAL = 2;
 

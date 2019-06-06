@@ -26,7 +26,7 @@ try {
             'name' => 'Complete Client Name',
             'birthDate' => '1990-01-10',
             'email' => 'email@email.com.br',
-            'gender' => \ClearSale\Billing::GENDER_MALE,
+            'gender' => \ClearSale\Gender::MALE,
             'address' => new \ClearSale\Address([
                 'street' => 'Street name example',
                 'number' => '100',
@@ -55,7 +55,7 @@ try {
             'name' => 'Complete Client Name',
             'birthDate' => '1990-01-10',
             'email' => 'email@email.com.br',
-            'gender' => \ClearSale\Billing::GENDER_MALE,
+            'gender' => \ClearSale\Gender::MALE,
             'address' => new \ClearSale\Address([
                 'street' => 'Street name example',
                 'number' => '100',
