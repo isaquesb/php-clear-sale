@@ -78,7 +78,7 @@ class Billing extends Entity
     public function setGender($gender)
     {
         $gender = strtoupper($gender);
-        if ($gender !== self::GENDER_MALE && $gender !== self::GENDER_FEMALE) {
+        if ($gender !== Gender::MALE && $gender !== Gender::FEMALE) {
             throw new \InvalidArgumentException('Invalid gender: ' . $gender);
         }
         $this->gender = $gender;
