@@ -1,7 +1,7 @@
 {
   "name": "isaquesb/clear-sale-php-sdk",
   "description": "Clear Sale API Client",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "Isaque de Souza",
