@@ -1,6 +1,4 @@
-# SDK
-
-ClearSale PHP SDK
+# ClearSale PHP
  
 ### Requirements
 
@@ -12,7 +10,7 @@ ClearSale PHP SDK
 composer require isaquesb/php-clear-sale
 ```
 
-### Usage
+### Complete Usage Example
 ```php
 $service = new ClearSale\Service\Orders(
     new \ClearSale\Ambient\Sandbox(),
