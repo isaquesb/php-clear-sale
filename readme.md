@@ -9,7 +9,7 @@ ClearSale PHP SDK
 ### Install
 
 ```
-composer require isaquesb/clear-sale-php-sdk
+composer require isaquesb/php-clear-sale
 ```
 
 ### Usage
